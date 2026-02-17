@@ -112,6 +112,40 @@ function App() {
                 </div>
             </section>
 
+            {/* Video Section */}
+            <section id="video" className="video-section">
+                <div className="container">
+                    <div className="video-wrapper animate-fade-in">
+                        <div className="video-info">
+                            <h2 className="section-title">Nuestra <span className="text-gradient">Preparación</span></h2>
+                            <p className="section-subtitle">Mira cómo creamos la magia en cada plato</p>
+                        </div>
+                        <div className="video-container shadow-premium">
+                            <video
+                                autoPlay
+                                muted
+                                loop
+                                playsInline
+                                className="product-video"
+                            >
+                                <source src="/videos/fresas-con-crema.mp4" type="video/mp4" />
+                                Tu navegador no soporta el tag de video.
+                            </video>
+                            <div className="video-badge-top-left">
+                                <span className="premium-label">Calidad Premium</span>
+                            </div>
+                            <div className="video-badge-corner">
+                                <img src="/images/logo.png" alt="StrayBerry" className="video-badge-logo" />
+                                <div className="video-badge-text">
+                                    <span className="badge-tag">Original</span>
+                                    <span className="badge-brand">StrayBerry</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
             {/* Parallax Banner */}
             <div className="parallax-banner" style={{ backgroundImage: 'url("/images/fresas_mantel.jpeg")' }}>
                 <div className="parallax-overlay">
