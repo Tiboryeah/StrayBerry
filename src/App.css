@@ -31,19 +31,16 @@
 
 @keyframes float {
     0% {
-        transform: translate(0, 0) rotate(0deg);
+        transform: translate3d(0, 0, 0) rotate(0deg);
     }
-
     33% {
-        transform: translate(50px, 80px) rotate(15deg);
+        transform: translate3d(50px, 80px, 0) rotate(15deg);
     }
-
     66% {
-        transform: translate(-30px, 120px) rotate(-10deg);
+        transform: translate3d(-30px, 120px, 0) rotate(-10deg);
     }
-
     100% {
-        transform: translate(0, 0) rotate(0deg);
+        transform: translate3d(0, 0, 0) rotate(0deg);
     }
 }
 
@@ -126,7 +123,11 @@
     background: rgba(255, 243, 232, 0.4);
     padding: 20px;
     border-radius: 20px;
-    backdrop-filter: blur(5px);
+}
+
+.parallax-hero-content {
+    transform: translateY(calc(var(--scroll-y) * -0.1));
+    will-change: transform;
 }
 
 .hero-title {
@@ -149,6 +150,11 @@
 .hero-image-container {
     flex: 1;
     position: relative;
+}
+
+.parallax-hero-image {
+    transform: translateY(calc(var(--scroll-y) * 0.1));
+    will-change: transform;
 }
 
 .hero-image {
@@ -348,14 +354,13 @@
 }
 
 .objetivo-card {
-    background: rgba(255, 255, 255, 0.5);
-    backdrop-filter: blur(10px);
+    background: #ffffff;
     padding: 40px;
     border-radius: 30px;
     text-align: left;
     position: relative;
     transition: var(--transition);
-    border: 1px solid rgba(255, 255, 255, 0.6);
+    border: 1px solid rgba(0, 0, 0, 0.05);
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.02);
 }
 
@@ -469,9 +474,8 @@
 }
 
 .proposito-card {
-    background: rgba(255, 255, 255, 0.75);
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.8);
+    background: #ffffff;
+    border: 1px solid rgba(0, 0, 0, 0.05);
     border-radius: 40px;
     overflow: hidden;
     display: flex;
@@ -541,13 +545,12 @@
 }
 
 .org-card {
-    background: rgba(255, 255, 255, 0.75);
-    backdrop-filter: blur(5px);
+    background: #ffffff;
     padding: 50px;
     border-radius: 40px;
     text-align: left;
     transition: var(--transition);
-    border: 1px solid rgba(255, 255, 255, 0.8);
+    border: 1px solid rgba(0, 0, 0, 0.05);
     box-shadow: 0 15px 35px rgba(0, 0, 0, 0.03);
     will-change: transform, box-shadow;
 }

@@ -3,14 +3,20 @@ import './App.css';
 
 function App() {
     const [isScrolled, setIsScrolled] = useState(false);
-    const [scrollOffset, setScrollOffset] = useState(0);
 
     useEffect(() => {
+        let ticking = false;
         const handleScroll = () => {
-            setIsScrolled(window.scrollY > 50);
-            setScrollOffset(window.scrollY);
+            if (!ticking) {
+                window.requestAnimationFrame(() => {
+                    setIsScrolled(window.scrollY > 50);
+                    document.documentElement.style.setProperty('--scroll-y', `${window.scrollY}px`);
+                    ticking = false;
+                });
+                ticking = true;
+            }
         };
-        window.addEventListener('scroll', handleScroll);
+        window.addEventListener('scroll', handleScroll, { passive: true });
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
 
@@ -74,7 +80,7 @@ function App() {
 
             {/* Hero Section */}
             <header id="hero" className="hero">
-                <div className="hero-content animate-fade-in" style={{ transform: `translateY(${scrollOffset * -0.1}px)` }}>
+                <div className="hero-content animate-fade-in parallax-hero-content">
                     <h1 className="hero-title">El lado más <span className="text-gradient">dulce</span> de la fresa</h1>
                     <p className="hero-subtitle">
                         Disfruta de la experiencia única de nuestras fresas con crema artesanal,
@@ -85,9 +91,9 @@ function App() {
                         <a href="#nosotros" className="btn btn-outline">Nuestra Historia</a>
                     </div>
                 </div>
-                <div className="hero-image-container animate-fade-in" style={{ animationDelay: '0.2s', transform: `translateY(${scrollOffset * 0.15}px)` }}>
+                <div className="hero-image-container animate-fade-in parallax-hero-image">
                     <img src="/images/fresas.jpeg" alt="Fresas con Crema" className="hero-image" />
-                    <div className="floating-badge" style={{ transform: `rotate(10deg) scale(${1 + Math.min(scrollOffset * 0.001, 0.2)})` }}>100% Fresco</div>
+                    <div className="floating-badge">100% Fresco</div>
                 </div>
             </header>
 
