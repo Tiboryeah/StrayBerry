@@ -40,15 +40,18 @@ function App() {
 
     return (
         <div className="app">
-            <div className="bg-sprinkles">
-                <div className="strawberry-float" style={{ top: '5%', left: '8%', fontSize: '80px', transform: `translateY(${scrollOffset * 0.05}px)`, opacity: 0.6 }}>🍓</div>
-                <div className="strawberry-float" style={{ top: '15%', left: '85%', fontSize: '70px', transform: `translateY(${scrollOffset * -0.08}px)`, opacity: 0.5 }}>🍓</div>
-                <div className="strawberry-float" style={{ top: '40%', left: '92%', fontSize: '90px', transform: `translateY(${scrollOffset * 0.12}px)`, opacity: 0.7 }}>🍓</div>
-                <div className="strawberry-float" style={{ top: '65%', left: '2%', fontSize: '75px', transform: `translateY(${scrollOffset * -0.15}px)`, opacity: 0.4 }}>🍓</div>
-                <div className="strawberry-float" style={{ top: '80%', left: '88%', fontSize: '85px', transform: `translateY(${scrollOffset * 0.07}px)`, opacity: 0.6 }}>🍓</div>
-                <div className="strawberry-float" style={{ top: '92%', left: '12%', fontSize: '65px', transform: `translateY(${scrollOffset * -0.05}px)`, opacity: 0.3 }}>🍓</div>
-                <div className="strawberry-float" style={{ top: '25%', left: '48%', fontSize: '40px', transform: `translateY(${scrollOffset * 0.03}px)`, opacity: 0.2 }}>🍓</div>
-                <div className="strawberry-float" style={{ top: '55%', left: '42%', fontSize: '55px', transform: `translateY(${scrollOffset * -0.06}px)`, opacity: 0.3 }}>🍓</div>
+            <div className="bg-ornaments">
+                <div className="ornament-circle" style={{ top: '5%', left: '8%', width: '150px', height: '150px', opacity: 0.1 }}></div>
+                <div className="ornament-circle" style={{ top: '15%', left: '85%', width: '120px', height: '120px', opacity: 0.08 }}></div>
+                <div className="ornament-circle" style={{ top: '40%', left: '92%', width: '180px', height: '180px', opacity: 0.12 }}></div>
+                <div className="ornament-circle" style={{ top: '65%', left: '2%', width: '140px', height: '140px', opacity: 0.06 }}></div>
+                
+                {/* Floating Real Strawberries - Larger sizes for better background presence */}
+                <img src="/images/fresa.png" className="strawberry-float" style={{ top: '10%', left: '15%', width: '150px', opacity: 0.25 }} alt="Fresa Flotante" />
+                <img src="/images/fresa.png" className="strawberry-float" style={{ top: '30%', left: '80%', width: '120px', opacity: 0.2, animationDelay: '-2s' }} alt="Fresa Flotante" />
+                <img src="/images/fresa.png" className="strawberry-float" style={{ top: '50%', left: '5%', width: '180px', opacity: 0.3, animationDelay: '-5s' }} alt="Fresa Flotante" />
+                <img src="/images/fresa.png" className="strawberry-float" style={{ top: '80%', left: '85%', width: '130px', opacity: 0.18, animationDelay: '-8s' }} alt="Fresa Flotante" />
+                <img src="/images/fresa.png" className="strawberry-float" style={{ top: '90%', left: '40%', width: '160px', opacity: 0.25, animationDelay: '-12s' }} alt="Fresa Flotante" />
             </div>
             {/* Navigation */}
             <nav className={`navbar ${isScrolled ? 'scrolled' : ''}`}>
@@ -61,6 +64,9 @@ function App() {
                         <li><a href="#hero">Inicio</a></li>
                         <li><a href="#productos">Productos</a></li>
                         <li><a href="#nosotros">Nosotros</a></li>
+                        <li><a href="#proposito">Misión y Visión</a></li>
+                        <li><a href="#organizacion">Organización</a></li>
+                        <li><a href="#objetivos">Objetivos</a></li>
                         <li><button className="btn btn-primary">Pedir Ahora</button></li>
                     </ul>
                 </div>
@@ -184,6 +190,150 @@ function App() {
                 </div>
             </section>
 
+            {/* Mission & Vision Section */}
+            <section id="proposito" className="proposito-section">
+                <div className="container">
+                    <div className="section-header">
+                        <h2 className="section-title">Nuestro <span className="text-gradient">Propósito</span></h2>
+                        <p className="section-subtitle">Lo que nos impulsa día a día</p>
+                    </div>
+                    <div className="proposito-grid">
+                        <div className="proposito-card animate-fade-in shadow-premium">
+                            <div className="proposito-header">
+                                <span className="proposito-tag">Misión</span>
+                                <h3 className="proposito-card-title">Transformar la Experiencia</h3>
+                            </div>
+                            <div className="proposito-body">
+                                <p className="proposito-text">
+                                    Transformar el consumo tradicional de postres en una experiencia <strong>dinámica y audaz</strong>, 
+                                    produciendo y distribuyendo fresas con crema de la más alta calidad.
+                                </p>
+                                <p className="proposito-text">
+                                    Nos enfocamos en satisfacer el antojo de nuestros clientes y socios comerciales mediante 
+                                    procesos de producción eficientes y una logística ágil, llevando la frescura de 
+                                    <strong> StrayBerry</strong> a cada destino con estilo y rapidez.
+                                </p>
+                            </div>
+                        </div>
+                        <div className="proposito-card animate-fade-in shadow-premium" style={{ animationDelay: '0.2s' }}>
+                            <div className="proposito-header">
+                                <span className="proposito-tag">Visión</span>
+                                <h3 className="proposito-card-title">Referente para el 2030</h3>
+                            </div>
+                            <div className="proposito-body">
+                                <p className="proposito-text">
+                                    Convertirnos para el <strong>2030</strong> en la marca referente de fresas con crema en la región.
+                                </p>
+                                <p className="proposito-text">
+                                    Aspiramos a ser reconocidos no solo por nuestro sabor, sino por una <strong>identidad visual icónica</strong> 
+                                    que inspire libertad y movimiento, expandiendo nuestra presencia tanto en el sector estudiantil 
+                                    como en las mejores cafeterías y negocios del país.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            {/* Organization Section */}
+            <section id="organizacion" className="org-section">
+                <div className="container">
+                    <div className="section-header">
+                        <h2 className="section-title">Nuestra <span className="text-gradient">Organización</span></h2>
+                        <p className="section-subtitle">Conoce los pilares que nos definen</p>
+                    </div>
+                    <div className="org-grid">
+                        <div className="org-card animate-fade-in shadow-premium">
+                            <div className="org-card-category">Nuestra Esencia</div>
+                            <h3 className="org-card-title">¿De qué trata StrayBerry?</h3>
+                            <p className="org-card-text">
+                                Somos una organización dedicada a la <strong>repostería gourmet artesanal</strong>, 
+                                especializada en la elevación del postre tradicional de fresas con crema. 
+                                Nos enfocamos en la creación de experiencias sensoriales dulces, utilizando 
+                                materia prima de la más alta calidad y una receta secreta de crema artesanal.
+                            </p>
+                        </div>
+                        <div className="org-card animate-fade-in shadow-premium" style={{ animationDelay: '0.2s' }}>
+                            <div className="org-card-category">Actividades Principales</div>
+                            <h3 className="org-card-title">¿Qué haremos como empresa?</h3>
+                            <ul className="org-list">
+                                <li>
+                                    <div className="list-content">
+                                        <h4>Abastecimiento Estratégico</h4>
+                                        <p>Seleccionamos personalmente las fresas más frescas directamente de agricultores locales.</p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div className="list-content">
+                                        <h4>Producción Artesanal</h4>
+                                        <p>Elaboramos nuestra crema diariamente bajo los más estrictos estándares de calidad.</p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div className="list-content">
+                                        <h4>Experiencia Omnicanal</h4>
+                                        <p>Brindamos un servicio excepcional tanto en nuestra plataforma digital como en puntos físicos.</p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div className="list-content">
+                                        <h4>Compromiso Sostenible</h4>
+                                        <p>Trabajamos en el uso de empaques biodegradables y procesos zero-waste.</p>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            {/* Long-term Objectives Section */}
+            <section id="objetivos" className="objetivos-section">
+                <div className="container">
+                    <div className="section-header">
+                        <h2 className="section-title">Plan a <span className="text-gradient">Largo Plazo</span></h2>
+                        <p className="section-subtitle">Nuestra hoja de ruta hacia el éxito</p>
+                    </div>
+                    <div className="objetivos-grid">
+                        <div className="objetivo-card animate-fade-in shadow-premium">
+                            <div className="objetivo-num">01</div>
+                            <h3 className="objetivo-title">Posicionamiento de marca</h3>
+                            <p className="objetivo-desc">Consolidar a STRAYBERRY como la marca líder de fresas con crema en la región antes del 2030, destacando por su calidad, sabor y una identidad visual innovadora.</p>
+                        </div>
+                        <div className="objetivo-card animate-fade-in shadow-premium" style={{ animationDelay: '0.1s' }}>
+                            <div className="objetivo-num">02</div>
+                            <h3 className="objetivo-title">Expansión de puntos de venta</h3>
+                            <p className="objetivo-desc">Establecer presencia en universidades, cafeterías y negocios estratégicos en diferentes ciudades del país, creando una red sólida de distribución.</p>
+                        </div>
+                        <div className="objetivo-card animate-fade-in shadow-premium" style={{ animationDelay: '0.2s' }}>
+                            <div className="objetivo-num">03</div>
+                            <h3 className="objetivo-title">Eficiencia en producción y logística</h3>
+                            <p className="objetivo-desc">Optimizar continuamente los procesos de producción y distribución para garantizar frescura, rapidez y consistencia en cada producto entregado.</p>
+                        </div>
+                        <div className="objetivo-card animate-fade-in shadow-premium" style={{ animationDelay: '0.3s' }}>
+                            <div className="objetivo-num">04</div>
+                            <h3 className="objetivo-title">Innovación en productos</h3>
+                            <p className="objetivo-desc">Desarrollar nuevas presentaciones y combinaciones de fresas con crema que mantengan la esencia de la marca y respondan a las tendencias del mercado.</p>
+                        </div>
+                        <div className="objetivo-card animate-fade-in shadow-premium" style={{ animationDelay: '0.4s' }}>
+                            <div className="objetivo-num">05</div>
+                            <h3 className="objetivo-title">Reconocimiento de marca</h3>
+                            <p className="objetivo-desc">Construir una identidad visual icónica y memorable que conecte con el público joven y refuerce el concepto dinámico y audaz de STRAYBERRY.</p>
+                        </div>
+                        <div className="objetivo-card animate-fade-in shadow-premium" style={{ animationDelay: '0.5s' }}>
+                            <div className="objetivo-num">06</div>
+                            <h3 className="objetivo-title">Alianzas estratégicas</h3>
+                            <p className="objetivo-desc">Crear colaboraciones con cafeterías, eventos estudiantiles y negocios gastronómicos para ampliar el alcance y posicionamiento de la marca.</p>
+                        </div>
+                        <div className="objetivo-card animate-fade-in shadow-premium" style={{ animationDelay: '0.6s' }}>
+                            <div className="objetivo-num">07</div>
+                            <h3 className="objetivo-title">Sostenibilidad y responsabilidad</h3>
+                            <p className="objetivo-desc">Implementar prácticas responsables en el manejo de ingredientes, empaques y procesos, contribuyendo al cuidado del medio ambiente.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
             {/* Footer */}
             <footer className="footer">
                 <div className="container footer-grid">
@@ -200,6 +350,9 @@ function App() {
                             <li><a href="#hero">Inicio</a></li>
                             <li><a href="#productos">Productos</a></li>
                             <li><a href="#nosotros">Nosotros</a></li>
+                            <li><a href="#proposito">Misión y Visión</a></li>
+                            <li><a href="#organizacion">Organización</a></li>
+                            <li><a href="#objetivos">Objetivos</a></li>
                         </ul>
                     </div>
                     <div className="footer-social">
