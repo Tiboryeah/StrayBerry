@@ -610,13 +610,59 @@
     line-height: 1.5;
 }
 
+@media (max-width: 1024px) {
+    .proposito-grid, .org-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .proposito-card-title {
+        font-size: 1.8rem;
+    }
+
+    .objetivos-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
 @media (max-width: 768px) {
-    .org-grid {
+    section {
+        padding: 60px 20px;
+    }
+
+    .section-title {
+        font-size: 2.2rem;
+    }
+
+    .nav-links {
+        display: none; /* Hide links for simple mobile view, can add hamburger later */
+    }
+
+    .nav-container {
+        justify-content: center;
+    }
+
+    .objetivos-grid {
         grid-template-columns: 1fr;
     }
-    
-    .org-card {
+
+    .strawberry-float {
+        width: 80px !important; /* Force smaller size on mobile */
+    }
+
+    /* Disable heavy parallax on mobile for better fluidity */
+    .parallax-hero-content, .parallax-hero-image {
+        transform: none !important;
+    }
+
+    .proposito-card, .org-card {
         padding: 30px;
+        border-radius: 30px;
+    }
+
+    .hero-content {
+        padding: 0;
+        background: transparent;
     }
 }
 
@@ -729,21 +775,41 @@
 @media (max-width: 968px) {
     .hero {
         flex-direction: column-reverse;
-        height: auto;
+        min-height: auto;
         text-align: center;
-        padding-top: 120px;
+        padding: 120px 20px 60px;
+        gap: 40px;
     }
 
     .hero-title {
-        font-size: 3rem;
+        font-size: 2.8rem;
+        line-height: 1.1;
     }
 
     .hero-subtitle {
-        margin: 0 auto 40px;
+        margin: 0 auto 30px;
+        font-size: 1.1rem;
     }
 
     .hero-btns {
-        justify-content: center;
+        flex-direction: column;
+        gap: 15px;
+        align-items: stretch;
+        max-width: 300px;
+        margin: 0 auto;
+    }
+
+    .hero-image {
+        height: auto;
+        max-width: 100%;
+        max-height: 400px;
+    }
+
+    .floating-badge {
+        top: 10px;
+        right: 10px;
+        padding: 10px 15px;
+        font-size: 0.9rem;
     }
 
     .about-container {
